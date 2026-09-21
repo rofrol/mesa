@@ -955,7 +955,7 @@ kk_get_device_properties(
 
    snprintf(properties->driverName, VK_MAX_DRIVER_NAME_SIZE, "KosmicKrisp");
    snprintf(properties->driverInfo, VK_MAX_DRIVER_INFO_SIZE,
-            "Mesa " PACKAGE_VERSION MESA_GIT_SHA1);
+            "vulkan-sdk-1.4.363" MESA_GIT_SHA1);
 }
 
 static void
