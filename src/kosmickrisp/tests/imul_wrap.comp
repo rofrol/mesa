@@ -1,0 +1,9 @@
+#version 450
+layout(local_size_x = 64) in;
+layout(std430, binding = 0) buffer Out { uint r[]; } o;
+layout(std430, binding = 1) buffer In { uint xs[]; } i;
+uint f(uint x) { uint h = x * 0x846ca68bu; return h >= 2147483648u ? 1u : 0u; }
+void main() {
+  uint k = gl_GlobalInvocationID.x;
+  o.r[k] = f(i.xs[k]);
+}
