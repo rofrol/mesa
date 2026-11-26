@@ -220,6 +220,11 @@ infer_types_from_alu(struct hash_table *types, nir_alu_instr *alu)
       set_type(types, &alu->src[0].src, TYPE_GENERIC_INT);
       set_type(types, &alu->src[1].src, TYPE_GENERIC_INT);
       break;
+   case nir_op_ineg:
+      // N -> N
+      set_type(types, &alu->def, TYPE_GENERIC_INT);
+      set_type(types, &alu->src[0].src, TYPE_GENERIC_INT);
+      break;
    case nir_op_iand:
    case nir_op_ior:
    case nir_op_ixor:
